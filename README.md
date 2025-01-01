@@ -14,7 +14,7 @@ But can it be fast enough? Initial results are promising when just using a mid-t
 ### 1. Sparse File
 The first idea was to try out a [sparse file](https://en.wikipedia.org/wiki/Sparse_file). By simply taking the hash of a key as a long, you can write directly to that index in the file without it actually taking up that much space on the disk.
 
-One benefit of this approach is the simplicity of the code. To find out where a value is in the file you just take the hash times the block size and skip the header. For values that are larger than one block, you store the next block at the end (like a linked list), or zeros if another block isn't needed.
+One benefit of this approach is the simplicity of the code. To find out where a value is in the file you just take the hash times the block size and skip the header. For values that are larger than one block, you store the next block index at the end (like a linked list), or zeros if another block isn't needed.
 
 One big downside is portability - even in a docker container, support for sparse files depends on the host operating system. Sparse files can also require extra steps when copying or backing them up.
 
