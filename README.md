@@ -41,12 +41,12 @@ The version would be used in something like a factory to get a parser that can r
 | ------------------ | --------- |
 | Key Hash           | ulong     |
 | Expiration		 | byte[19]  |
-| Block Count        | int       |
+| Count of Indices   | int       |
 | Data Indices       | long[]    |
 | Checksum           | ushort    |
 
 #### Data File
-The size is stored to prevent data corruption. A fixed block size means padding with zeros, so we need to know the difference between padding and valid ending zeros.
+The data size is stored to prevent data corruption. A fixed block size means padding with zeros, so we need to know the difference between padding and valid ending zeros.
 
 ##### Block
 | Data               | Type             |
