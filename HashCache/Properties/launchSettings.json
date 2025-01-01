@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HashCache": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
